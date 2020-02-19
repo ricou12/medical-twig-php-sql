@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% include 'includes/head.html.twig'%}
+
+<body>
+    {% include 'includes/navbar.html.twig' %}
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 mt-2 border p-2 rounded">
+                <div class="p-3 bg-secondary border text-white">
+                    <h1>Profil du patient</h1>
+                </div>
+                <ul class="list-group my-2">
+                    <li class="list-group-item">Nom : {{patient[0].lastname}}
+                    </li>
+                    </a>
+                    </li>
+                    <li class="list-group-item">Prénom : {{patient[0].firstname}}
+                    </li>
+                    </a>
+                    </li>
+                    <li class="list-group-item">Date de naissance : {{patient[0].birthdate}}
+                    </li>
+                    </a></li>
+                    <li class="list-group-item">Télephone : {{patient[0].phone}}</li></a></li>
+                    <li class="list-group-item">Email : {{patient[0].mail}}</li></a></li>
+                </ul>
+                <div class="p-3 bg-warning border text-dark w-50">
+                    <h2>Mes rendez-vous</h2>
+                </div>
+                {% for info in patient %}
+                <ul class="list-group my-2">
+                    <li class="list-group-item">date du Rdv : {{info.dateRdv}}</li></a></li>
+                    <li class="list-group-item">heure du Rdv : {{info.heureRdv}}</li></a></li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'includes/script.html.twig' %}
+</body>
+
+</html>

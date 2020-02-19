@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{% include 'includes/head.html.twig'%}
+
+<body>
+    {% include 'includes/navbar.html.twig' %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 mt-2 border p-2 rounded">
+                <!-- Search form -->
+                <div class="p-2">
+                    <form action="?routing=listPts" class="form-inline my-2 my-lg-0" method="POST">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                            name="nomPatient">
+                        <button class="btn btn-outline-success my-2 my-sm-0" name="searchPatient"
+                            type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="p-3 bg-secondary border text-white">
+                    <h1>Liste des Patients</h1>
+                </div>
+                <ul class="list-group">
+                    {% for patient in listpatients  %}
+                    <li class="list-group-item d-flex flex-wrap justify-content-between">
+                        <a href="index.php?routing=patient&amp;id={{patient.lastname}}">{{patient.lastname}}</a>
+                        <div>
+                            <a href="index.php?routing=updatePt&amp;id={{patient.id}}" class="btn btn-primary mr-3">Modifier</a>
+                            <a href="index.php?routing=listPts&amp;delPatientById={{patient.id}}"><img src="img/trash.png"
+                                    alt="Corbeille"></a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center p-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    {% include 'includes/script.html.twig' %}
+</body>

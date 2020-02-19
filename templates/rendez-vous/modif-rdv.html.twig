@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% include 'includes/head.html.twig'%}
+
+<body>
+    {% include 'includes/navbar.html.twig' %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 mt-2 border p-2 rounded">
+                <div class="p-3 bg-secondary border text-white">
+                    <h1>Modifier ce rendez-vous</h1>
+                </div>
+                <ul class="list-group">
+                    <form action="?routing=updateRdv" method="POST">
+                        {% for rdv in updaterdv %}
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Date du rendez-vous</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.dateRdv}}" name="dateRdv" required>
+                            <label for="exampleInputPassword1">Date du rendez-vous</label>
+                            <input type="time" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.heureRdv}}" name="heureRdv" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Nom</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.lastname}}" name="nom" disabled required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Prénom</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.firstname}}" name="prenom" disabled required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Date de naissance</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.birthdate}}" name="date" disabled required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Téléphone</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.phone}}" name="tel"
+                                pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
+                                disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1"
+                                value="{{rdv.mail}}" name="mail" disabled required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="formIdRdv"
+                            value="{{rdv.idrdv}}">Enregistrer</button>
+                        {% endfor %}
+                        <form>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% include 'includes/script.html.twig' %}
+
+</html>

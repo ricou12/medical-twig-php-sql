@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    {% include 'includes/head.html.twig'%}
+
+    <body>
+    {% include 'includes/navbar.html.twig' %}
+            <div class="container p-2">
+                <table class="table table-hover table-reflow">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Rendez-vous</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Date de naissance</th>
+                            <th scope="col">Téléphone</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rdv in listrdv %}
+                        <tr>
+                                <th scope="row">
+                                    <a href="index.php?routing=rdv&amp;idDeleteRdv={{ rdv.idrdv }}"><img src="img/trash.png" alt="Corbeille"></a>
+                                </th>
+                                <th>
+                                    <a href="index.php?routing=updateRdv&amp;idRdv={{ rdv.idrdv }}">{{ rdv.dateHour }}</a>
+                                </th>
+                                <td>{{ rdv.lastname }}</td>
+                                <td>{{ rdv.firstname }}</td>
+                                <td>{{ rdv.birthdate }}</td>
+                                <td>{{ rdv.phone }}</td>
+                                <td>{{ rdv.mail }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    {% include 'includes/script.html.twig' %}
+    </body>
+</html>
