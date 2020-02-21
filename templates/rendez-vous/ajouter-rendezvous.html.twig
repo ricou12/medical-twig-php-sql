@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
-    {% include 'includes/head.html.twig'%}
-    <body>
-        <div class="container-fluid">
-            {% include 'includes/navbar.html.twig' %}
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-6 mt-2 border p-2 rounded">
-                        <div class="p-3 bg-secondary border text-white">
-                            <h1>Rendez-vous en ligne</h1>
-                        </div>
-                        <form action="?routing=addRdv" method="POST">
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">idpatient</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" name="idnom">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Date</label>
-                                <input type="date" class="form-control" id="exampleInputPassword1" name="daterdv">
-                                <label for="exampleInputPassword1">Heure</label>
-                                <input type="time" class="form-control" id="exampleInputPassword1" name="heurerdv"
-                                    min="09:00" max="16:00" step="1800">
-                            </div>
-                            <button type="submit" class="btn btn-primary" name="newrdv">confirmez</button>
-                        </form>
-                    </div>
+{% extends "default.html.twig" %}
+
+{% block title %}
+    Prise de rendez-vous
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-lg-6 mt-2 border p-2 rounded">
+                <div class="p-3 bg-secondary border text-white">
+                    <h1>Rendez-vous en ligne</h1>
                 </div>
+                <form action="?routing=addRdv" method="POST">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Patient</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="idnom">
+                            <option selected>Choisir...</option>
+                            {% for patient in patients %}
+                                <option value="{{patient.id}}">{{patient.lastname}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Date</label>
+                        <input type="date" class="form-control" id="exampleInputPassword1" name="daterdv">
+                        <label for="exampleInputPassword1">Heure</label>
+                        <input type="time" class="form-control" id="exampleInputPassword1" name="heurerdv" min="09:00"
+                            max="16:00" step="1800">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="newrdv">confirmez</button>
+                </form>
             </div>
         </div>
-        {% include 'includes/script.html.twig' %}
-    </body>
-</html>
+    </div>
+</div>
+{% endblock %}
