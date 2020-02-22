@@ -7,32 +7,32 @@
 {% block content %}
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-6 mt-2 border p-2 rounded">
-            <div class="p-3 bg-secondary border text-white">
+        <div class="col-12 col-lg-8 mt-2 border p-2 rounded bg--dark text-white">
+            <div class="p-3 bg-secondary border">
                 <h1>Profil du patient</h1>
             </div>
             <ul class="list-group my-2">
-                <li class="list-group-item">Nom : {{patient[0].lastname}}
+                <li class="list-group-item bg--dark">Nom : {{patient[0].lastname}}
                 </li>
                 </a>
                 </li>
-                <li class="list-group-item">Prénom : {{patient[0].firstname}}
+                <li class="list-group-item bg--dark">Prénom : {{patient[0].firstname}}
                 </li>
                 </a>
                 </li>
-                <li class="list-group-item">Date de naissance : {{patient[0].birthdate}}
+                <li class="list-group-item bg--dark">Date de naissance : {{patient[0].birthdate}}
                 </li>
                 </a></li>
-                <li class="list-group-item">Télephone : {{patient[0].phone}}</li></a></li>
-                <li class="list-group-item">Email : {{patient[0].mail}}</li></a></li>
+                <li class="list-group-item bg--dark">Télephone : {{patient[0].phone}}</li></a></li>
+                <li class="list-group-item bg--dark">Email : {{patient[0].mail}}</li></a></li>
             </ul>
             <div class="p-3 bg-warning border text-dark w-50">
                 <h2>Mes rendez-vous</h2>
             </div>
             {% for info in patient %}
                 <ul class="list-group my-2">
-                    <li class="list-group-item">date du Rdv : {{info.dateRdv}}</li></a></li>
-                    <li class="list-group-item">heure du Rdv : {{info.heureRdv}}</li></a></li>
+                    <li class="list-group-item bg--dark">date du Rdv : {{info.dateRdv}}</li></a></li>
+                    <li class="list-group-item bg--dark">heure du Rdv : {{info.heureRdv}}</li></a></li>
                 </ul>
             {% endfor %}
         </div>

@@ -21,11 +21,15 @@
             {% for rdv in listrdv %}
             <tr>
                 <th scope="row">
-                    <a href="index.php?routing=delRdv&amp;idDeleteRdv={{ rdv.idrdv }}"><img style="filter:invert(100%);" src="img/trash.png"
-                            alt="Corbeille"></a>
+                    <form action="index.php?routing=delRdv" method="POST">
+                        <button type="submit" class="btn btn-outline-danger" name="idDeleteRdv" value="{{ rdv.idrdv }}"><img style="filter:invert(100%);" src="img/trash.png"
+                            alt="Corbeille"></button>
+                    </form>
                 </th>
                 <th>
-                    <a href="index.php?routing=sh_updateRdv&amp;idRdv={{ rdv.idrdv }}">{{ rdv.dateHour }}</a>
+                    <form action="index.php?routing=modifier-un-rdv" method="POST">
+                        <button type="submit" class="btn btn-outline-success mr-3" name="idRdv" value="{{ rdv.idrdv }}">{{ rdv.dateHour }}</button>
+                    </form>
                 </th>
                 <td>{{ rdv.lastname }}</td>
                 <td>{{ rdv.firstname }}</td>

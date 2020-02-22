@@ -44,7 +44,7 @@ try{
         break;
 
         // Rendu de la page ajouter un patient
-        case 'sh_AddPt' :
+        case 'ajouter-un-patient' :
             $appController->render_newPatient();
         break;
 
@@ -60,15 +60,15 @@ try{
         break;
 
         // Rendu de la page liste des patients
-        case 'patients':
-            $id = isset($_GET['pageIndex']) ? $_GET['pageIndex'] : '1';
+        case 'liste-des-patients':
+            $id = isset($_POST['pageIndex']) ? $_POST['pageIndex'] : '1';
             $appController->showListPatient($id);
         break;
 
         // Rendu de la page profil d'un patient
         case 'patient':
-            if(isset($_GET['id'])){
-                $appController->render_profilPatient($_GET['id']);
+            if(isset($_POST['id'])){
+                $appController->render_profilPatient($_POST['id']);
             } 
             else
             {
@@ -77,20 +77,20 @@ try{
         break;
 
         // Rechercher un patient
-        case 'searchPt':
+        case 'rechercher-un-patient':
             $appController->searchPatient($_POST['nomPatient']);
         break;
 
         // Supprimer un patient
-        case 'delPt':
-            $appController->deletePatient($_GET['delPatientById']);
+        case 'supprimer-un-patient':
+            $appController->deletePatient($_POST['delPatientById']);
         break;
 
         // Rendu de la page MAJ
-        case 'sh_updatePt':
-            if(isset($_GET['id']))
+        case 'modifier-un-patient':
+            if(isset($_POST['id']))
             {
-                $appController->render_modifPatient($_GET['id']);
+                $appController->render_modifPatient($_POST['id']);
             } 
             else
             {
@@ -104,7 +104,7 @@ try{
         break;
 
         // Rendu de la page ajouter patient avec rendez-vous
-        case 'sh_ptRdv':
+        case 'ajouter-patient-avec-rdv':
             $appController->render_addPTAndRdv();
         break;
 
@@ -120,7 +120,7 @@ try{
         break;
 
         // Rendu de la page liste des RDV
-        case 'rdvs':
+        case 'liste-des-rdv':
             $appController->showListRdv();
         break;
 
@@ -137,10 +137,10 @@ try{
         break;
 
         // Rendu de la page modifier un RDV
-        case 'sh_updateRdv':
-            if(isset($_GET['idRdv']))
+        case 'modifier-un-rdv':
+            if(isset($_POST['idRdv']))
             {
-                $appController->showUpdateRdv($_GET['idRdv']);
+                $appController->showUpdateRdv($_POST['idRdv']);
             }
             else
             {
@@ -150,8 +150,8 @@ try{
 
         // Supprimer un RDV
         case 'delRdv':
-            if(isset($_GET['idDeleteRdv'])){
-                $appController->deleteRdv($_GET['idDeleteRdv']);  
+            if(isset($_POST['idDeleteRdv'])){
+                $appController->deleteRdv($_POST['idDeleteRdv']);  
             }
             else
             {
@@ -160,7 +160,7 @@ try{
         break;
 
         // Rendu de la page ajouter un RDV
-        case 'sh_addRdv':
+        case 'ajouter-un-rdv':
             $appController->showRdv();
         break;
 

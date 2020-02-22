@@ -6,27 +6,31 @@
 {% block content %}
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-6 mt-2 border p-2 rounded">
-            <!-- Search form -->
-            <div class="p-2">
-                <form action="?routing=searchPt" class="form-inline my-2 my-lg-0" method="POST">
+        <div class="col-12 col-lg-8 mt-2 border p-2 bg--dark text-white rounded">
+            <div class="p-2 border text-center rounded">
+                <h1>Liste des Patients</h1>
+            </div>
+            <div class="p-3 mt-3 border-bottom">
+                <form action="?routing=rechercher-un-patient" class="form-inline my-2 my-lg-0" method="POST">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                         name="nomPatient">
                     <button class="btn btn-outline-success my-2 my-sm-0" name="searchPatient"
                         type="submit">Search</button>
                 </form>
             </div>
-            <div class="p-3 bg-secondary border text-white">
-                <h1>Liste des Patients</h1>
-            </div>
-            <ul class="list-group">
+            <ul class="list-group p-3">
                 {% for patient in listpatients[1] %}
-                    <li class="list-group-item d-flex flex-wrap justify-content-between">
-                        <a href="index.php?routing=patient&amp;id={{patient.id}}">{{patient.lastname}}</a>
-                        <div>
-                            <a href="index.php?routing=sh_updatePt&amp;id={{patient.id}}" class="btn btn-primary mr-3">Modifier</a>
-                            <a href="index.php?routing=delPt&amp;delPatientById={{patient.id}}"><img src="img/trash.png"
-                                    alt="Corbeille"></a>
+                    <li class="list-group-item d-flex flex-wrap justify-content-between bg--dark">
+                        <form action="index.php?routing=patient" method="POST">
+                             <button type="submit" class="btn btn-dark text-white" name="id" value="{{patient.id}}">{{patient.lastname}}</button>
+                        </form>
+                        <div class="d-flex align-items-center">
+                            <form action="index.php?routing=modifier-un-patient" method="POST">
+                                <button type="submit" class="btn btn-primary mr-3" name="id" value="{{patient.id}}">Modifier</button>
+                            </form>
+                            <form action="index.php?routing=supprimer-un-patient" method="POST">
+                                <button type="submit" class="btn btn-outline-danger" name="delPatientById" value="{{patient.id}}"><img style="filter:invert(100%);" src="img/trash.png"</button>
+                            </form>
                         </div>
                     </li>
                 {% endfor %}
@@ -38,8 +42,11 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     {% for i in 1..listpatients[0] %}
-                        <li class="page-item"><a class="page-link"
-                            href="index.php?routing=patients&amp;pageIndex={{ i }}">{{ i }}</a></li>
+                        <li class="page-item">
+                            <form action="index.php?routing=liste-des-patients" method="POST">
+                                <button type="submit" class="page-link bg-dark text-white" name="pageIndex" value="{{ i }}">{{ i }}</button>
+                            </form>
+                        </li>
                     {% endfor %}
                 </ul>
             </nav>

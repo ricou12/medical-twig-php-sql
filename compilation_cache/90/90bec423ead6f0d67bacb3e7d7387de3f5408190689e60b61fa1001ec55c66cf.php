@@ -59,11 +59,11 @@ class __TwigTemplate_98934a390ac60b1b15a907278e5a13c0a82b4f0244d1d81863f525a11b8
         // line 8
         echo "<div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-3 border p-2 rounded bg-dark text-white\">
+            <div class=\"p-3 border\">
                 <h1>Modifier les informations du patient.</h1>
             </div>
-            <form action=\"?routing=updatePt\" method=\"POST\">
+            <form action=\"?routing=updatePt\" method=\"POST\" class=\"mt-3 p-3\">
                 ";
         // line 15
         $context['_parent'] = $context;
@@ -154,11 +154,11 @@ class __TwigTemplate_98934a390ac60b1b15a907278e5a13c0a82b4f0244d1d81863f525a11b8
 {% block content %}
 <div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-3 border p-2 rounded bg-dark text-white\">
+            <div class=\"p-3 border\">
                 <h1>Modifier les informations du patient.</h1>
             </div>
-            <form action=\"?routing=updatePt\" method=\"POST\">
+            <form action=\"?routing=updatePt\" method=\"POST\" class=\"mt-3 p-3\">
                 {% for patient in updatepatients %}
                     <div class=\"form-group\">
                         <label for=\"exampleInputPassword1\">Nom</label>

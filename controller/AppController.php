@@ -61,7 +61,7 @@ class AppController extends BaseController {
     function deletePatient($id)
     {
         $this->sqlCommande->deletePatient($id);
-        header('location: index.php?routing=patients');
+        header('location: index.php?routing=liste-des-patients');
         exit;
     }
 
@@ -78,7 +78,7 @@ class AppController extends BaseController {
     // MAJ des infos d'un patient
     function updatePatient($id,$nom,$prenom,$date,$tel,$mail){
         $updatePatient = $this->sqlCommande->updatePatients($id,$nom,$prenom,$date,$tel,$mail);
-        header('location: index.php?routing=patients');
+        header('location: index.php?routing=liste-des-patients');
     }
 
     // Rendu de la page ajouter patient avec RDV
@@ -92,7 +92,7 @@ class AppController extends BaseController {
     function newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv)
     {
         $stateOfResquest = $this->sqlCommande->newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv);
-        header('Location: index.php?routing=patients'); 
+        header('Location: index.php?routing=liste-des-patients'); 
         exit; 
     }
 
@@ -110,7 +110,7 @@ class AppController extends BaseController {
     function deleteRdv($id)
     {
         $this->sqlCommande->deleteRdv($id);
-            header('location: index.php?routing=rdvs');
+            header('location: index.php?routing=liste-des-rdv');
             exit;
     }
 
@@ -144,7 +144,7 @@ class AppController extends BaseController {
     function newRdv($daterdv,$heurerdv,$idnom)
     {
         $this->sqlCommande->newRdv($daterdv,$heurerdv,$idnom);
-        header('location: index.php?routing=rdvs');
+        header('location: index.php?routing=liste-des-rdv');
     }
     
     // Rendu de la page erreur 404

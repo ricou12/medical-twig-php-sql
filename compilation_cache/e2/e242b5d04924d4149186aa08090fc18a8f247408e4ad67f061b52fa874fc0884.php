@@ -43,11 +43,11 @@ class __TwigTemplate_6b4bbb0ddcdec888b716eadb898d1b4812962b4cfe937128629be701cbb
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">
         <div class=\"navbar-nav\">
-            <a class=\"nav-item nav-link active\" href=\"?routing=patients\">Patients<span class=\"sr-only\">(current)</span></a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_AddPt\">Ajout patient</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_ptRdv\">Ajout patient/RDV</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=rdvs\">RDV</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_addRdv\">Prise de rendez-vous</a>
+            <a class=\"nav-item nav-link active\" href=\"?routing=liste-des-patients\">Patients<span class=\"sr-only\">(current)</span></a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-un-patient\">Ajout patient</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-patient-avec-rdv\">Ajout patient/RDV</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=liste-des-rdv\">RDV</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-un-rdv\">Prise de rendez-vous</a>
         </div>
     </div>
 </nav>";
@@ -74,11 +74,11 @@ class __TwigTemplate_6b4bbb0ddcdec888b716eadb898d1b4812962b4cfe937128629be701cbb
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">
         <div class=\"navbar-nav\">
-            <a class=\"nav-item nav-link active\" href=\"?routing=patients\">Patients<span class=\"sr-only\">(current)</span></a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_AddPt\">Ajout patient</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_ptRdv\">Ajout patient/RDV</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=rdvs\">RDV</a>
-            <a class=\"nav-item nav-link\" href=\"?routing=sh_addRdv\">Prise de rendez-vous</a>
+            <a class=\"nav-item nav-link active\" href=\"?routing=liste-des-patients\">Patients<span class=\"sr-only\">(current)</span></a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-un-patient\">Ajout patient</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-patient-avec-rdv\">Ajout patient/RDV</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=liste-des-rdv\">RDV</a>
+            <a class=\"nav-item nav-link\" href=\"?routing=ajouter-un-rdv\">Prise de rendez-vous</a>
         </div>
     </div>
 </nav>", "includes/navbar.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\includes\\navbar.html.twig");

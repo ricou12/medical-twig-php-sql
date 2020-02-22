@@ -59,16 +59,16 @@ class __TwigTemplate_3da86693c6a94359e7a22ddf9681ebfb954b47a7fe74b1f872fbebd7365
         // line 7
         echo "<div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 mt-2 border p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 border text-center\">
                 <h1>Créer votre compte et prendre RDV </h1>
             </div>
-            <form action=\"index.php?routing=newPtRdv\" method=\"POST\">
+            <form action=\"index.php?routing=newPtRdv\" method=\"POST\" class=\"p-3\">
                 <div class=\"container\">
                     <div class=\"row\">
-                        <div class=\"col-12 col-lg-6 \">
-                            <div class=\"form-group border p-2 w-100\">
-                                <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 p-2\">
+                            <div class=\"form-group border w-100 p-3 mt-2\">
+                                <div class=\"text-white text-center\">
                                     <h3>Rendez-vous</h3>
                                 </div>
                                 <label for=\"exampleInputPassword1\">Date</label>
@@ -78,8 +78,8 @@ class __TwigTemplate_3da86693c6a94359e7a22ddf9681ebfb954b47a7fe74b1f872fbebd7365
                                     min=\"09:00\" max=\"16:00\" step=\"1800\">
                             </div>
                         </div>
-                        <div class=\"col-12 col-lg-6 border p-3\">
-                            <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 border p-2 mt-3\">
+                            <div class=\"p-3 text-center mt-3\">
                                 <h3>Patient</h3>
                             </div>
                             <div class=\"form-group\">
@@ -147,16 +147,16 @@ class __TwigTemplate_3da86693c6a94359e7a22ddf9681ebfb954b47a7fe74b1f872fbebd7365
 {% block content %}
 <div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 mt-2 border p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 border text-center\">
                 <h1>Créer votre compte et prendre RDV </h1>
             </div>
-            <form action=\"index.php?routing=newPtRdv\" method=\"POST\">
+            <form action=\"index.php?routing=newPtRdv\" method=\"POST\" class=\"p-3\">
                 <div class=\"container\">
                     <div class=\"row\">
-                        <div class=\"col-12 col-lg-6 \">
-                            <div class=\"form-group border p-2 w-100\">
-                                <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 p-2\">
+                            <div class=\"form-group border w-100 p-3 mt-2\">
+                                <div class=\"text-white text-center\">
                                     <h3>Rendez-vous</h3>
                                 </div>
                                 <label for=\"exampleInputPassword1\">Date</label>
@@ -166,8 +166,8 @@ class __TwigTemplate_3da86693c6a94359e7a22ddf9681ebfb954b47a7fe74b1f872fbebd7365
                                     min=\"09:00\" max=\"16:00\" step=\"1800\">
                             </div>
                         </div>
-                        <div class=\"col-12 col-lg-6 border p-3\">
-                            <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 border p-2 mt-3\">
+                            <div class=\"p-3 text-center mt-3\">
                                 <h3>Patient</h3>
                             </div>
                             <div class=\"form-group\">
