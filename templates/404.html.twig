@@ -1,0 +1,31 @@
+{% extends "default.html.twig" %}
+
+{% block title %}
+    Erreur 404
+{% endblock %}
+
+{% block content %}
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+
+{# <img src="{{ relative_path('./img/404.png') }}" alt=""> #}
+<img src="img/404.png" alt="">
+  <p><strong>Page non trouvée</strong></p>
+  <p>Désolé, la page que vous avez demandé n'existe pas.</p>
+</div>
+{% endblock %}
+  
+

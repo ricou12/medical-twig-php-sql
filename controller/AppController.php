@@ -3,91 +3,100 @@ require_once(__DIR__.'/BaseController.php');
 
 class AppController extends BaseController {
 
+    // Page d'accueil
     function home()
     {
         echo $this->render('home.html.twig', ['title' => 'Accueil']);
     }
-    
-    function patient($id)
-    {
-        $profilPatient = $this->sqlCommande->profilRdvPatients($id);
-        echo $this->render('patients/profil-patient.html.twig', 
-            ['title' => 'Profil du patient',
-            'patient' => $profilPatient
-            ]);
-    }
 
-    function newPatient_GET()
+    // Rendu de la page ajouter un patient
+    function render_newPatient()
     {
         echo $this->render('patients/ajouter-patient.html.twig', ['title' => 'Nouveau patient']);
     }
 
-    function newPatient_POST($nom,$prenom,$naissance,$tel,$email)
+    // Ajoute un patient
+    function add_newPatient($nom,$prenom,$naissance,$tel,$email)
     {
         $this->sqlCommande->addNewPatient($nom,$prenom,$naissance,$tel,$email);
-        header('Location: index.php?routing=listPts');
+        header('Location: index.php?routing=patients');
         exit;
     }
 
-    function deletePatient($id)
+    // Rendu de la page liste des patients
+    function showListPatient($id)
     {
-        $this->sqlCommande->deletePatient($id);
-            header('location: index.php?routing=listPts');
-            exit;
+        $listpatients = $this->sqlCommande->listPatients($id);
+        echo $this->render('patients/list-patients.html.twig', 
+        ['title' => 'Liste des patients',
+        'listpatients' => $listpatients
+        ]);   
     }
 
+    // rendu de la page profil d'un patient
+    function render_profilPatient($id)
+    {
+        $profilPatient = $this->sqlCommande->profilRdvPatients($id);
+        if ($profilPatient)
+        {
+           echo $this->render('patients/profil-patient.html.twig', 
+            ['title' => 'Profil du patient',
+            'patient' => $profilPatient
+            ]); 
+        }
+        
+    }
+
+    // Rechercher un patient
     function searchPatient($name)
     {
-        return $this->sqlCommande->searchPatient($name);
-    }
-
-    function listePatients($id)
-    {
-        return $this->sqlCommande->listPatients($id);
-    }
-
-    function showListPatient($listpatients)
-    {
+        $listpatients = $this->sqlCommande->searchPatient($name);
         echo $this->render('patients/list-patients.html.twig', 
             ['title' => 'Liste des patients',
             'listpatients' => $listpatients
             ]);
     }
 
-    function updatePatients($modifier,$nom,$prenom,$date,$tel,$mail){
-        $updatePatient = $this->sqlCommande->updatePatients($modifier,$nom,$prenom,$date,$tel,$mail);
-        header('location: index.php?routing=listPts');
+    // supprimer un patient
+    function deletePatient($id)
+    {
+        $this->sqlCommande->deletePatient($id);
+        header('location: index.php?routing=patients');
+        exit;
     }
 
-    function profilPatients($id)
+    // Rendu de la page MAJ
+    function render_modifPatient($id)
     {
         $profilPatient = $this->sqlCommande->profilPatients($id);
-                echo $this->render('patients/modif-patient.html.twig', 
-                        ['title' => 'Modifier infos patients',
-                        'updatepatients' => $profilPatient
-                        ]);
+        echo $this->render('patients/modif-patient.html.twig', 
+                ['title' => 'Modifier infos patients',
+                'updatepatients' => $profilPatient
+                ]);
     }
 
-    function newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv)
-    {
-        $stateOfResquest = $this->sqlCommande->newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv);
-        header('Location: index.php?routing=listPts'); 
-        exit; 
+    // MAJ des infos d'un patient
+    function updatePatient($id,$nom,$prenom,$date,$tel,$mail){
+        $updatePatient = $this->sqlCommande->updatePatients($id,$nom,$prenom,$date,$tel,$mail);
+        header('location: index.php?routing=patients');
     }
 
-    function showUpdatePTAndRdv()
+    // Rendu de la page ajouter patient avec RDV
+    function render_addPTAndRdv()
     {
         echo $this->render('rendez-vous/ajoutPtRdv.html.twig', 
                         ['title' => 'Modifier infos patients']);
     }
 
-    function deleteRdv($id)
+    // Enregistrer le patient et RDV
+    function newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv)
     {
-        $this->sqlCommande->deleteRdv($id);
-            header('location: index.php?routing=rdv');
-            exit;
+        $stateOfResquest = $this->sqlCommande->newPtAndRdv($nom,$prenom,$naissance,$tel,$email,$daterdv,$heurerdv);
+        header('Location: index.php?routing=patients'); 
+        exit; 
     }
 
+    // Rendu de la page liste RDV
     function showListRdv()
     {
         $listRdv = $this->sqlCommande->listeRdv();
@@ -97,12 +106,32 @@ class AppController extends BaseController {
         ]);
     }
 
-    function newRdv($daterdv,$heurerdv,$idnom)
+    // Supprimer un RDV
+    function deleteRdv($id)
     {
-        $this->sqlCommande->newRdv($daterdv,$heurerdv,$idnom);
-        header('location: index.php?routing=rdv');
+        $this->sqlCommande->deleteRdv($id);
+            header('location: index.php?routing=rdvs');
+            exit;
     }
 
+    // Rendu de la page modifier un RDV
+    function showUpdateRdv($idRdv)
+    {
+        $listrdv = $this->sqlCommande->rdv($idRdv);
+        echo $this->render('rendez-vous/modif-rdv.html.twig', 
+                ['title' => 'Modifier un rendez-vous',
+                'updaterdv' => $listrdv
+                ]);
+    }
+
+    // Enregistrer les modification du RDV
+    function updateRdv($idRdv,$dateRdv,$heureRdv)
+    {
+        $this->sqlCommande->updateRdv($idRdv,$dateRdv,$heureRdv);
+            header('location: index.php?routing=rdv');
+    }
+
+    // Rendu de la page ajouter RDV
     function showRdv()
     {
         $mesPatients = $this->sqlCommande->getPatients();
@@ -111,18 +140,16 @@ class AppController extends BaseController {
                                     'patients' => $mesPatients]);
     }
 
-    function updateRdv($formIdRdv,$dateRdv,$heureRdv)
+    // Enregistre un nouveau RDV
+    function newRdv($daterdv,$heurerdv,$idnom)
     {
-        $this->sqlCommande->updateRdv($formIdRdv,$dateRdv,$heureRdv);
-            header('location: index.php?routing=rdv');
+        $this->sqlCommande->newRdv($daterdv,$heurerdv,$idnom);
+        header('location: index.php?routing=rdvs');
     }
-
-    function showUpdateRdv($idRdv)
+    
+    // Rendu de la page erreur 404
+    function erreur404()
     {
-        $listrdv = $this->sqlCommande->rdv($idRdv);
-        echo $this->render('rendez-vous/modif-rdv.html.twig', 
-                ['title' => 'Modifier un rendez-vous',
-                'updaterdv' => $listrdv
-                ]);
+        echo $this->render('404.html.twig',['title' => 'Erreur 404']);
     }
 }
