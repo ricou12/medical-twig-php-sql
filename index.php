@@ -25,7 +25,7 @@ try {
     die('Erreur SQL : ' . $e->getMessage());
 }
 
-// INSTANCIE LES CLASSES ENFANTS DE BaseController AVEC COMME ARGUMENTS (L'OBJET TWIG ET LE MODELE POUR L'ACCES AU DONNEES)
+// INSTANCIE LES CLASSES ENFANTS DE BaseController
 $appController = new AppController($twig, $sqlCommande);
 $patientController = new PatientController($twig, $sqlCommande);
 $rdvController = new RdvController($twig, $sqlCommande);

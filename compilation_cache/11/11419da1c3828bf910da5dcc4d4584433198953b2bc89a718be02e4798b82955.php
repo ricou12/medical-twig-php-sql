@@ -59,11 +59,11 @@ class __TwigTemplate_cb56375e4e9772bec0a17076708e96195a678cb33e6aed1935f4b7d04f1
         // line 7
         echo "<div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-2  p-2 rounded bg--dark text-white\">
+            <div class=\"p-2  text-center rounded\">
                 <h1>Nouveau patient</h1>
             </div>
-            <form action=\"?routing=newPt\" method=\"POST\">
+            <form action=\"index.php?routing=addnewPt\" method=\"POST\" class=\"mt-3 px-5 py-3\">
                 <div class=\"form-group\">
                     <label for=\"exampleInputPassword1\">Nom</label>
                     <input type=\"text\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"nom\" required>
@@ -89,7 +89,9 @@ class __TwigTemplate_cb56375e4e9772bec0a17076708e96195a678cb33e6aed1935f4b7d04f1
                         pattern=\"^((\\+\\d{1,3}(-| )?\\(?\\d\\)?(-| )?\\d{1,5})|(\\(?\\d{2,6}\\)?))(-| )?(\\d{3,4})(-| )?(\\d{4})(( x| ext)\\d{1,5}){0,1}\$\"
                         class=\"form-control\" id=\"exampleInputPassword1\" name=\"tel\">
                 </div>
-                <button type=\"submit\" class=\"btn btn-primary\" name=\"ajout\">Ajouter ce patient</button>
+                <div class=\"text-center mb-2\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Ajouter ce patient</button>
+                <div>
             </form>
         </div>
     </div>
@@ -122,11 +124,11 @@ class __TwigTemplate_cb56375e4e9772bec0a17076708e96195a678cb33e6aed1935f4b7d04f1
 {% block content %}
 <div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-2  p-2 rounded bg--dark text-white\">
+            <div class=\"p-2  text-center rounded\">
                 <h1>Nouveau patient</h1>
             </div>
-            <form action=\"?routing=newPt\" method=\"POST\">
+            <form action=\"index.php?routing=addnewPt\" method=\"POST\" class=\"mt-3 px-5 py-3\">
                 <div class=\"form-group\">
                     <label for=\"exampleInputPassword1\">Nom</label>
                     <input type=\"text\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"nom\" required>
@@ -152,11 +154,13 @@ class __TwigTemplate_cb56375e4e9772bec0a17076708e96195a678cb33e6aed1935f4b7d04f1
                         pattern=\"^((\\+\\d{1,3}(-| )?\\(?\\d\\)?(-| )?\\d{1,5})|(\\(?\\d{2,6}\\)?))(-| )?(\\d{3,4})(-| )?(\\d{4})(( x| ext)\\d{1,5}){0,1}\$\"
                         class=\"form-control\" id=\"exampleInputPassword1\" name=\"tel\">
                 </div>
-                <button type=\"submit\" class=\"btn btn-primary\" name=\"ajout\">Ajouter ce patient</button>
+                <div class=\"text-center mb-2\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Ajouter ce patient</button>
+                <div>
             </form>
         </div>
     </div>
 </div>
-{% endblock %}", "patients/ajouter-patient.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\patients\\ajouter-patient.html.twig");
+{% endblock %}", "patients/ajouter-patient.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\patients\\ajouter-patient.html.twig");
     }
 }

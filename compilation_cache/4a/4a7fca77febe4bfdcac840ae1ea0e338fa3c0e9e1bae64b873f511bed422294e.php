@@ -59,16 +59,16 @@ class __TwigTemplate_5f4d01f4cacafc82bb9a505c83a3b255287e56dccb73cfb9f3c33ba90bb
         // line 7
         echo "<div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 mt-2 p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 text-center\">
                 <h1>Créer votre compte et prendre RDV </h1>
             </div>
-            <form action=\"index.php?routing=newPtRdv\" method=\"POST\">
+            <form action=\"index.php?routing=newPtRdv\" method=\"POST\" class=\"p-3\">
                 <div class=\"container\">
                     <div class=\"row\">
-                        <div class=\"col-12 col-lg-6 \">
-                            <div class=\"form-group border p-2 w-100\">
-                                <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 px-5\">
+                            <div class=\"form-group w-100 mt-2\">
+                                <div class=\"text-white text-center\">
                                     <h3>Rendez-vous</h3>
                                 </div>
                                 <label for=\"exampleInputPassword1\">Date</label>
@@ -78,8 +78,8 @@ class __TwigTemplate_5f4d01f4cacafc82bb9a505c83a3b255287e56dccb73cfb9f3c33ba90bb
                                     min=\"09:00\" max=\"16:00\" step=\"1800\">
                             </div>
                         </div>
-                        <div class=\"col-12 col-lg-6 border p-3\">
-                            <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 px-5 \">
+                            <div class=\"text-center p-3 \">
                                 <h3>Patient</h3>
                             </div>
                             <div class=\"form-group\">
@@ -147,16 +147,16 @@ class __TwigTemplate_5f4d01f4cacafc82bb9a505c83a3b255287e56dccb73cfb9f3c33ba90bb
 {% block content %}
 <div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 mt-2 p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 text-center\">
                 <h1>Créer votre compte et prendre RDV </h1>
             </div>
-            <form action=\"index.php?routing=newPtRdv\" method=\"POST\">
+            <form action=\"index.php?routing=newPtRdv\" method=\"POST\" class=\"p-3\">
                 <div class=\"container\">
                     <div class=\"row\">
-                        <div class=\"col-12 col-lg-6 \">
-                            <div class=\"form-group border p-2 w-100\">
-                                <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 px-5\">
+                            <div class=\"form-group w-100 mt-2\">
+                                <div class=\"text-white text-center\">
                                     <h3>Rendez-vous</h3>
                                 </div>
                                 <label for=\"exampleInputPassword1\">Date</label>
@@ -166,8 +166,8 @@ class __TwigTemplate_5f4d01f4cacafc82bb9a505c83a3b255287e56dccb73cfb9f3c33ba90bb
                                     min=\"09:00\" max=\"16:00\" step=\"1800\">
                             </div>
                         </div>
-                        <div class=\"col-12 col-lg-6 border p-3\">
-                            <div class=\"shadow bg-light text-secondary p-3\">
+                        <div class=\"col-12 col-lg-6 px-5 \">
+                            <div class=\"text-center p-3 \">
                                 <h3>Patient</h3>
                             </div>
                             <div class=\"form-group\">
@@ -207,6 +207,6 @@ class __TwigTemplate_5f4d01f4cacafc82bb9a505c83a3b255287e56dccb73cfb9f3c33ba90bb
         </div>
     </div>
 </div>
-{% endblock %}", "rendez-vous/ajoutPtRdv.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\rendez-vous\\ajoutPtRdv.html.twig");
+{% endblock %}", "rendez-vous/ajoutPtRdv.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\rendez-vous\\ajoutPtRdv.html.twig");
     }
 }

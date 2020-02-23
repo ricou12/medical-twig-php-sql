@@ -46,22 +46,24 @@ class __TwigTemplate_06553b580a46fccd9fe6c041cc0eac88fc8668eb58fb30c60ceb96f0493
         echo "        <title>";
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        
     </head>
     <body>
         ";
-        // line 8
-        $this->loadTemplate("includes/navbar.html.twig", "default.html.twig", 8)->display($context);
         // line 9
-        echo "        <main>
-            ";
+        $this->loadTemplate("includes/navbar.html.twig", "default.html.twig", 9)->display($context);
         // line 10
-        $this->displayBlock('content', $context, $blocks);
+        echo "        <main >
+            <div class=\"fond\"></div>
+            ";
         // line 12
+        $this->displayBlock('content', $context, $blocks);
+        // line 14
         echo "        </main>
         ";
-        // line 13
-        $this->loadTemplate("includes/script.html.twig", "default.html.twig", 13)->display($context);
-        // line 14
+        // line 15
+        $this->loadTemplate("includes/script.html.twig", "default.html.twig", 15)->display($context);
+        // line 16
         echo "    </body>
 </html>";
     }
@@ -72,11 +74,11 @@ class __TwigTemplate_06553b580a46fccd9fe6c041cc0eac88fc8668eb58fb30c60ceb96f0493
         $macros = $this->macros;
     }
 
-    // line 10
+    // line 12
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 11
+        // line 13
         echo "            ";
     }
 
@@ -92,7 +94,7 @@ class __TwigTemplate_06553b580a46fccd9fe6c041cc0eac88fc8668eb58fb30c60ceb96f0493
 
     public function getDebugInfo()
     {
-        return array (  80 => 11,  76 => 10,  70 => 5,  65 => 14,  63 => 13,  60 => 12,  58 => 10,  55 => 9,  53 => 8,  46 => 5,  44 => 4,  39 => 1,);
+        return array (  82 => 13,  78 => 12,  72 => 5,  67 => 16,  65 => 15,  62 => 14,  60 => 12,  56 => 10,  54 => 9,  46 => 5,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -102,15 +104,17 @@ class __TwigTemplate_06553b580a46fccd9fe6c041cc0eac88fc8668eb58fb30c60ceb96f0493
     <head>
         {% include 'includes/head.html.twig'%}
         <title>{% block title %}{% endblock %}</title>
+        
     </head>
     <body>
         {% include 'includes/navbar.html.twig' %}
-        <main>
+        <main >
+            <div class=\"fond\"></div>
             {% block content %}
             {% endblock %}
         </main>
         {% include 'includes/script.html.twig' %}
     </body>
-</html>", "default.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\default.html.twig");
+</html>", "default.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\default.html.twig");
     }
 }

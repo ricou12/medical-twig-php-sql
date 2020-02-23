@@ -62,6 +62,6 @@ class __TwigTemplate_9bc82cb00daffd92109b261be6e8b8fa9c02e987ce67b073da74934d151
 <link rel=\"stylesheet\" href=\"style.css\">
 
 {# <title>{{ title }}</title> #}
-", "includes/head.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\includes\\head.html.twig");
+", "includes/head.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\includes\\head.html.twig");
     }
 }

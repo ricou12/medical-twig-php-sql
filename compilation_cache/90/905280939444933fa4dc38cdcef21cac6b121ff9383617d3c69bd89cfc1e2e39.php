@@ -60,11 +60,11 @@ class __TwigTemplate_34c5629cef67666dd656ffccf4ae98b64a580b4c263d0869410fc0e3b43
         echo "<div class=\"container-fluid\">
     <div class=\"container\">
         <div class=\"row d-flex justify-content-center\">
-            <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-                <div class=\"p-3 bg-secondary border text-white\">
+            <div class=\"col-12 col-lg-8 bg--dark text-white mt-2 p-2 rounded\">
+                <div class=\"p-2 rounded text-center\">
                     <h1>Rendez-vous en ligne</h1>
                 </div>
-                <form action=\"?routing=addRdv\" method=\"POST\">
+                <form action=\"?routing=addRdv\" method=\"POST\" class=\"mt-3 p-4\">
                     <div class=\"input-group mb-3\">
                         <div class=\"input-group-prepend\">
                             <label class=\"input-group-text\" for=\"inputGroupSelect01\">Patient</label>
@@ -97,7 +97,9 @@ class __TwigTemplate_34c5629cef67666dd656ffccf4ae98b64a580b4c263d0869410fc0e3b43
                         <input type=\"time\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"heurerdv\" min=\"09:00\"
                             max=\"16:00\" step=\"1800\">
                     </div>
-                    <button type=\"submit\" class=\"btn btn-primary\" name=\"newrdv\">confirmez</button>
+                    <div class=\"text-center\">
+                        <button type=\"submit\" class=\"btn btn-primary\">confirmez</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -132,11 +134,11 @@ class __TwigTemplate_34c5629cef67666dd656ffccf4ae98b64a580b4c263d0869410fc0e3b43
 <div class=\"container-fluid\">
     <div class=\"container\">
         <div class=\"row d-flex justify-content-center\">
-            <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-                <div class=\"p-3 bg-secondary border text-white\">
+            <div class=\"col-12 col-lg-8 bg--dark text-white mt-2 p-2 rounded\">
+                <div class=\"p-2 rounded text-center\">
                     <h1>Rendez-vous en ligne</h1>
                 </div>
-                <form action=\"?routing=addRdv\" method=\"POST\">
+                <form action=\"?routing=addRdv\" method=\"POST\" class=\"mt-3 p-4\">
                     <div class=\"input-group mb-3\">
                         <div class=\"input-group-prepend\">
                             <label class=\"input-group-text\" for=\"inputGroupSelect01\">Patient</label>
@@ -155,12 +157,14 @@ class __TwigTemplate_34c5629cef67666dd656ffccf4ae98b64a580b4c263d0869410fc0e3b43
                         <input type=\"time\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"heurerdv\" min=\"09:00\"
                             max=\"16:00\" step=\"1800\">
                     </div>
-                    <button type=\"submit\" class=\"btn btn-primary\" name=\"newrdv\">confirmez</button>
+                    <div class=\"text-center\">
+                        <button type=\"submit\" class=\"btn btn-primary\">confirmez</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}", "rendez-vous/ajouter-rendezvous.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\rendez-vous\\ajouter-rendezvous.html.twig");
+{% endblock %}", "rendez-vous/ajouter-rendezvous.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\rendez-vous\\ajouter-rendezvous.html.twig");
     }
 }

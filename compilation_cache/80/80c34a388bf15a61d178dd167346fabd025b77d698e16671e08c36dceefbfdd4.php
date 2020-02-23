@@ -90,6 +90,6 @@ class __TwigTemplate_b5f12e78016ba3fc1c3b3931b32bd3b5c033e86953b97efbf8456f607ba
         <img src=\"img/fond.png\" alt=\"\">
     </div>
 {% endblock %}
-", "home.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\home.html.twig");
+", "home.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\home.html.twig");
     }
 }

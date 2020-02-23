@@ -58,7 +58,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
         $macros = $this->macros;
         // line 7
         echo "<div class=\"container p-2\">
-    <table class=\"table table-hover table-dark\">
+    <table class=\"table table-hover bg--dark text-white\">
         <thead>
             <tr>
                 <th scope=\"col\">#</th>
@@ -79,39 +79,43 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
             // line 22
             echo "            <tr>
                 <th scope=\"row\">
-                    <a href=\"index.php?routing=rdv&amp;idDeleteRdv=";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 24), "html", null, true);
+                    <form action=\"index.php?routing=delRdv\" method=\"POST\">
+                        <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"idDeleteRdv\" value=\"";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 25), "html", null, true);
             echo "\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
-                            alt=\"Corbeille\"></a>
+                            alt=\"Corbeille\"></button>
+                    </form>
                 </th>
                 <th>
-                    <a href=\"index.php?routing=updateRdv&amp;idRdv=";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 28), "html", null, true);
+                    <form action=\"index.php?routing=modifier-un-rdv\" method=\"POST\">
+                        <button type=\"submit\" class=\"btn btn-outline-success mr-3\" name=\"idRdv\" value=\"";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 31), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "dateHour", [], "any", false, false, false, 28), "html", null, true);
-            echo "</a>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "dateHour", [], "any", false, false, false, 31), "html", null, true);
+            echo "</button>
+                    </form>
                 </th>
                 <td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "lastname", [], "any", false, false, false, 30), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "firstname", [], "any", false, false, false, 31), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "birthdate", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "phone", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "mail", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "lastname", [], "any", false, false, false, 34), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "firstname", [], "any", false, false, false, 35), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "birthdate", [], "any", false, false, false, 36), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "phone", [], "any", false, false, false, 37), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "mail", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
             </tr>
             ";
@@ -119,7 +123,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rdv'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 41
         echo "        </tbody>
     </table>
 </div>
@@ -138,7 +142,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
 
     public function getDebugInfo()
     {
-        return array (  123 => 37,  114 => 34,  110 => 33,  106 => 32,  102 => 31,  98 => 30,  91 => 28,  84 => 24,  80 => 22,  76 => 21,  60 => 7,  56 => 6,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  127 => 41,  118 => 38,  114 => 37,  110 => 36,  106 => 35,  102 => 34,  94 => 31,  85 => 25,  80 => 22,  76 => 21,  60 => 7,  56 => 6,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,7 +154,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
 {% endblock %}
 {% block content %}
 <div class=\"container p-2\">
-    <table class=\"table table-hover table-dark\">
+    <table class=\"table table-hover bg--dark text-white\">
         <thead>
             <tr>
                 <th scope=\"col\">#</th>
@@ -166,11 +170,15 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
             {% for rdv in listrdv %}
             <tr>
                 <th scope=\"row\">
-                    <a href=\"index.php?routing=rdv&amp;idDeleteRdv={{ rdv.idrdv }}\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
-                            alt=\"Corbeille\"></a>
+                    <form action=\"index.php?routing=delRdv\" method=\"POST\">
+                        <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"idDeleteRdv\" value=\"{{ rdv.idrdv }}\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
+                            alt=\"Corbeille\"></button>
+                    </form>
                 </th>
                 <th>
-                    <a href=\"index.php?routing=updateRdv&amp;idRdv={{ rdv.idrdv }}\">{{ rdv.dateHour }}</a>
+                    <form action=\"index.php?routing=modifier-un-rdv\" method=\"POST\">
+                        <button type=\"submit\" class=\"btn btn-outline-success mr-3\" name=\"idRdv\" value=\"{{ rdv.idrdv }}\">{{ rdv.dateHour }}</button>
+                    </form>
                 </th>
                 <td>{{ rdv.lastname }}</td>
                 <td>{{ rdv.firstname }}</td>
@@ -182,6 +190,6 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
         </tbody>
     </table>
 </div>
-{% endblock %}", "rendez-vous/list-rendezvous.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\rendez-vous\\list-rendezvous.html.twig");
+{% endblock %}", "rendez-vous/list-rendezvous.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\rendez-vous\\list-rendezvous.html.twig");
     }
 }
