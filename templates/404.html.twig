@@ -1,31 +1,52 @@
-{% extends "default.html.twig" %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% include 'includes/head.html.twig'%}
+    <title>error</title>
+</head>
+
+<body>
+    <main>
+        <div class="erreur "></div>
+        <div class="container-fluid text-white">
+            <div class="row rounded p-5 mt-1">
+                <div class="col-12 text-center">
+                    <h1 class="text-info">PAGE NOT FOUND</h1>
+                    <h3 class="mt-4">{{ message }}</h3>
+                </div>
+                <div class="col-12 text-center mt-4 ">
+                    <form action="index.php?routing=home" method="POST">
+                        <button type="submit" class="btn btn-outline-light"><h3>Retour en page d'accueil</h3></button>
+                    </form>
+                 
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'includes/script.html.twig' %}
+</body>
+
+</html>
+
+
+
+
+
+{# {% extends "default.html.twig" %}
 
 {% block title %}
-    Erreur 404
+    Error
 {% endblock %}
-
 {% block content %}
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-
-{# <img src="{{ relative_path('./img/404.png') }}" alt=""> #}
-<img src="img/404.png" alt="">
-  <p><strong>Page non trouvée</strong></p>
-  <p>Désolé, la page que vous avez demandé n'existe pas.</p>
-</div>
-{% endblock %}
-  
-
+    <div class="container-fluid">
+       <div class="row">
+            <div class="error"></div>
+            <div class="col-12 d-flex justify-content-center">
+            </div>
+            <div class="col-12">
+               <p>{{ message }}</p>
+            </div>
+       </div> 
+    </div>
+{% endblock %} #}

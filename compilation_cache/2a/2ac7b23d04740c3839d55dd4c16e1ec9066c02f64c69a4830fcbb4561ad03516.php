@@ -73,9 +73,7 @@ class __TwigTemplate_ae1ca22fad6c897acaf36ee1c76fa517acfe2268dd22bf85362eed6d8e6
 
 <div class=\"container\">
 
-";
-        // line 25
-        echo "<img src=\"img/404.png\" alt=\"\">
+<img src=\"img/404.png\" alt=\"\">
   <p><strong>Page non trouvée</strong></p>
   <p>Désolé, la page que vous avez demandé n'existe pas.</p>
 </div>
@@ -94,7 +92,7 @@ class __TwigTemplate_ae1ca22fad6c897acaf36ee1c76fa517acfe2268dd22bf85362eed6d8e6
 
     public function getDebugInfo()
     {
-        return array (  78 => 25,  60 => 8,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  60 => 8,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -122,7 +120,6 @@ class __TwigTemplate_ae1ca22fad6c897acaf36ee1c76fa517acfe2268dd22bf85362eed6d8e6
 
 <div class=\"container\">
 
-{# <img src=\"{{ relative_path('./img/404.png') }}\" alt=\"\"> #}
 <img src=\"img/404.png\" alt=\"\">
   <p><strong>Page non trouvée</strong></p>
   <p>Désolé, la page que vous avez demandé n'existe pas.</p>

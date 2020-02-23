@@ -54,18 +54,16 @@ class __TwigTemplate_1a5a005fa97b52819cb4497a50c7edc47b6db4db75c9dde1ddd55eeb8ec
         $this->loadTemplate("includes/navbar.html.twig", "default.html.twig", 9)->display($context);
         // line 10
         echo "        <main >
-         ";
-        // line 25
-        echo "            <div class=\"fond\"></div>
+            <div class=\"fond\"></div>
             ";
-        // line 26
+        // line 12
         $this->displayBlock('content', $context, $blocks);
-        // line 28
+        // line 14
         echo "        </main>
         ";
-        // line 29
-        $this->loadTemplate("includes/script.html.twig", "default.html.twig", 29)->display($context);
-        // line 30
+        // line 15
+        $this->loadTemplate("includes/script.html.twig", "default.html.twig", 15)->display($context);
+        // line 16
         echo "    </body>
 </html>";
     }
@@ -76,11 +74,11 @@ class __TwigTemplate_1a5a005fa97b52819cb4497a50c7edc47b6db4db75c9dde1ddd55eeb8ec
         $macros = $this->macros;
     }
 
-    // line 26
+    // line 12
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 27
+        // line 13
         echo "            ";
     }
 
@@ -96,7 +94,7 @@ class __TwigTemplate_1a5a005fa97b52819cb4497a50c7edc47b6db4db75c9dde1ddd55eeb8ec
 
     public function getDebugInfo()
     {
-        return array (  84 => 27,  80 => 26,  74 => 5,  69 => 30,  67 => 29,  64 => 28,  62 => 26,  59 => 25,  56 => 10,  54 => 9,  46 => 5,  44 => 4,  39 => 1,);
+        return array (  82 => 13,  78 => 12,  72 => 5,  67 => 16,  65 => 15,  62 => 14,  60 => 12,  56 => 10,  54 => 9,  46 => 5,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -111,20 +109,6 @@ class __TwigTemplate_1a5a005fa97b52819cb4497a50c7edc47b6db4db75c9dde1ddd55eeb8ec
     <body>
         {% include 'includes/navbar.html.twig' %}
         <main >
-         {# /* <style>
-        video#bgvid {
-            position: fixed; right: 0; bottom: 0;
-            min-width: 100%; min-height: 100%;
-            width:auto; height: auto; z-index: -100;
-            background-size: cover;
-        }
-    </style>
-
-    
-        <video autoplay=\"true\" loop muted  id=\"bgvid\">
-            <source src=\"img/video.webm\" type=\"video/webm\">
-            <source src=\"img/video.mp4\" type=\"video/mp4\">
-        </video> */ #}
             <div class=\"fond\"></div>
             {% block content %}
             {% endblock %}
