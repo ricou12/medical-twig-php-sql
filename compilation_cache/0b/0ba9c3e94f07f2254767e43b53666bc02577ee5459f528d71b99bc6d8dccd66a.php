@@ -48,7 +48,9 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
     {
         $macros = $this->macros;
         // line 4
-        echo "    Liste patients
+        echo "    ";
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+        echo "
 ";
     }
 
@@ -65,7 +67,10 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
             </div>
             <div class=\"p-3 mt-3 border-bottom\">
                 <form action=\"?routing=rechercher-un-patient\" class=\"form-inline my-2 my-lg-0\" method=\"POST\">
-                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\"
+                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"";
+        // line 15
+        echo twig_escape_filter($this->env, ($context["state"] ?? null), "html", null, true);
+        echo "\" aria-label=\"Search\"
                         name=\"nomPatient\">
                     <button class=\"btn btn-outline-success my-2 my-sm-0\" name=\"searchPatient\"
                         type=\"submit\">Search</button>
@@ -79,27 +84,21 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
         foreach ($context['_seq'] as $context["_key"] => $context["patient"]) {
             // line 23
             echo "                    <li class=\"list-group-item d-flex flex-wrap justify-content-between bg--dark\">
-                        <form action=\"index.php?routing=patient\" method=\"POST\">
-                             <button type=\"submit\" class=\"btn btn-dark text-white\" name=\"id\" value=\"";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 25), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "lastname", [], "any", false, false, false, 25), "html", null, true);
-            echo "</button>
-                        </form>
+                    <a href=\"index.php?routing=patient&amp;id=";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "\" class=\"btn btn-dark text-white\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "lastname", [], "any", false, false, false, 24), "html", null, true);
+            echo "</a>
                         <div class=\"d-flex align-items-center\">
-                            <form action=\"index.php?routing=modifier-un-patient\" method=\"POST\">
-                                <button type=\"submit\" class=\"btn btn-primary mr-3\" name=\"id\" value=\"";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 29), "html", null, true);
-            echo "\">Modifier</button>
-                            </form>
-                            <form action=\"index.php?routing=supprimer-un-patient\" method=\"POST\">
-                                <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"delPatientById\" value=\"";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 32), "html", null, true);
-            echo "\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"</button>
-                            </form>
+                        <a href=\"index.php?routing=modifier-un-patient&amp;id=";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 26), "html", null, true);
+            echo "\" class=\"btn btn-primary mr-3\">Modifier</a>
+                            <a href=\"index.php?routing=supprimer-un-patient&amp;delPatientById=";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 27), "html", null, true);
+            echo "\" class=\"btn btn-outline-danger\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"></a>
                         </div>
                     </li>
                 ";
@@ -107,7 +106,7 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['patient'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 31
         echo "            </ul>
         </div>
     </div>
@@ -116,27 +115,25 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
             <nav aria-label=\"Page navigation example\">
                 <ul class=\"pagination\">
                     ";
-        // line 44
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, (($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = ($context["listpatients"] ?? null)) && is_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144) || $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 instanceof ArrayAccess ? ($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144[0] ?? null) : null)));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 45
+            // line 39
             echo "                        <li class=\"page-item\">
-                            <form action=\"index.php?routing=liste-des-patients\" method=\"POST\">
-                                <button type=\"submit\" class=\"page-link bg-dark text-white\" name=\"pageIndex\" value=\"";
-            // line 47
+                            <a href=\"index.php?routing=liste-des-patients&amp;pageIndex=";
+            // line 40
             echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-            echo "\">";
+            echo "\" class=\"page-link bg-dark text-white\">";
             echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-            echo "</button>
-                            </form>
+            echo "</a>
                         </li>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 43
         echo "                </ul>
             </nav>
         </div>
@@ -157,7 +154,7 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
 
     public function getDebugInfo()
     {
-        return array (  140 => 51,  128 => 47,  124 => 45,  120 => 44,  111 => 37,  100 => 32,  94 => 29,  85 => 25,  81 => 23,  77 => 22,  60 => 7,  56 => 6,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  137 => 43,  126 => 40,  123 => 39,  119 => 38,  110 => 31,  100 => 27,  96 => 26,  89 => 24,  86 => 23,  82 => 22,  72 => 15,  62 => 7,  58 => 6,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -165,7 +162,7 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
         return new Source("{% extends \"default.html.twig\" %}
 
 {% block title %}
-    Liste patients
+    {{ title }}
 {% endblock %}
 {% block content %}
 <div class=\"container\">
@@ -176,7 +173,7 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
             </div>
             <div class=\"p-3 mt-3 border-bottom\">
                 <form action=\"?routing=rechercher-un-patient\" class=\"form-inline my-2 my-lg-0\" method=\"POST\">
-                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\"
+                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"{{ state }}\" aria-label=\"Search\"
                         name=\"nomPatient\">
                     <button class=\"btn btn-outline-success my-2 my-sm-0\" name=\"searchPatient\"
                         type=\"submit\">Search</button>
@@ -185,16 +182,10 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
             <ul class=\"list-group p-3\">
                 {% for patient in listpatients[1] %}
                     <li class=\"list-group-item d-flex flex-wrap justify-content-between bg--dark\">
-                        <form action=\"index.php?routing=patient\" method=\"POST\">
-                             <button type=\"submit\" class=\"btn btn-dark text-white\" name=\"id\" value=\"{{patient.id}}\">{{patient.lastname}}</button>
-                        </form>
+                    <a href=\"index.php?routing=patient&amp;id={{patient.id}}\" class=\"btn btn-dark text-white\">{{patient.lastname}}</a>
                         <div class=\"d-flex align-items-center\">
-                            <form action=\"index.php?routing=modifier-un-patient\" method=\"POST\">
-                                <button type=\"submit\" class=\"btn btn-primary mr-3\" name=\"id\" value=\"{{patient.id}}\">Modifier</button>
-                            </form>
-                            <form action=\"index.php?routing=supprimer-un-patient\" method=\"POST\">
-                                <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"delPatientById\" value=\"{{patient.id}}\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"</button>
-                            </form>
+                        <a href=\"index.php?routing=modifier-un-patient&amp;id={{patient.id}}\" class=\"btn btn-primary mr-3\">Modifier</a>
+                            <a href=\"index.php?routing=supprimer-un-patient&amp;delPatientById={{patient.id}}\" class=\"btn btn-outline-danger\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"></a>
                         </div>
                     </li>
                 {% endfor %}
@@ -207,9 +198,7 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
                 <ul class=\"pagination\">
                     {% for i in 1..listpatients[0] %}
                         <li class=\"page-item\">
-                            <form action=\"index.php?routing=liste-des-patients\" method=\"POST\">
-                                <button type=\"submit\" class=\"page-link bg-dark text-white\" name=\"pageIndex\" value=\"{{ i }}\">{{ i }}</button>
-                            </form>
+                            <a href=\"index.php?routing=liste-des-patients&amp;pageIndex={{ i }}\" class=\"page-link bg-dark text-white\">{{ i }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -217,6 +206,6 @@ class __TwigTemplate_8aa0381780ef2db428212429bbb07883c4b756b6c9f177a5e59f96bae0a
         </div>
     </div>
 </div>
-{% endblock %}", "patients/list-patients.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\patients\\list-patients.html.twig");
+{% endblock %}", "patients/list-patients.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\patients\\list-patients.html.twig");
     }
 }

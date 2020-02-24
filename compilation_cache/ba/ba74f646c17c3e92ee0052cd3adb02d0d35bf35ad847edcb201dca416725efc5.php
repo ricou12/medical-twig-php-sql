@@ -59,11 +59,11 @@ class __TwigTemplate_c37d68b5d3e9627f6bd7c259952ecea32934b32c8f0241a3cb45f50f1b8
         // line 8
         echo "<div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-3 border p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 border\">
                 <h1>Modifier les informations du patient.</h1>
             </div>
-            <form action=\"?routing=updatePt\" method=\"POST\">
+            <form action=\"?routing=updatePt\" method=\"POST\" class=\"mt-3 p-3\">
                 ";
         // line 15
         $context['_parent'] = $context;
@@ -111,17 +111,16 @@ class __TwigTemplate_c37d68b5d3e9627f6bd7c259952ecea32934b32c8f0241a3cb45f50f1b8
             echo "\"
                             name=\"mail\" required>
                     </div>
-                    <button type=\"submit\" class=\"btn btn-primary\" name=\"modifier\"
-                        value=\"";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 43), "html", null, true);
+                    <button type=\"submit\" class=\"btn btn-primary\" name=\"id\"value=\"";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 42), "html", null, true);
             echo "\">Enregistrer</button>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['patient'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 44
         echo "            <form>
         </div>
     </div>
@@ -141,7 +140,7 @@ class __TwigTemplate_c37d68b5d3e9627f6bd7c259952ecea32934b32c8f0241a3cb45f50f1b8
 
     public function getDebugInfo()
     {
-        return array (  125 => 45,  117 => 43,  110 => 39,  101 => 33,  93 => 28,  85 => 23,  77 => 18,  73 => 16,  69 => 15,  60 => 8,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  124 => 44,  116 => 42,  110 => 39,  101 => 33,  93 => 28,  85 => 23,  77 => 18,  73 => 16,  69 => 15,  60 => 8,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -155,11 +154,11 @@ class __TwigTemplate_c37d68b5d3e9627f6bd7c259952ecea32934b32c8f0241a3cb45f50f1b8
 {% block content %}
 <div class=\"container\">
     <div class=\"row d-flex justify-content-center\">
-        <div class=\"col-12 col-lg-6 mt-2 border p-2 rounded\">
-            <div class=\"p-3 bg-secondary border text-white\">
+        <div class=\"col-12 col-lg-8 mt-3 border p-2 rounded bg--dark text-white\">
+            <div class=\"p-3 border\">
                 <h1>Modifier les informations du patient.</h1>
             </div>
-            <form action=\"?routing=updatePt\" method=\"POST\">
+            <form action=\"?routing=updatePt\" method=\"POST\" class=\"mt-3 p-3\">
                 {% for patient in updatepatients %}
                     <div class=\"form-group\">
                         <label for=\"exampleInputPassword1\">Nom</label>
@@ -187,8 +186,7 @@ class __TwigTemplate_c37d68b5d3e9627f6bd7c259952ecea32934b32c8f0241a3cb45f50f1b8
                         <input type=\"email\" class=\"form-control\" id=\"exampleInputPassword1\" value=\"{{patient.mail}}\"
                             name=\"mail\" required>
                     </div>
-                    <button type=\"submit\" class=\"btn btn-primary\" name=\"modifier\"
-                        value=\"{{patient.id}}\">Enregistrer</button>
+                    <button type=\"submit\" class=\"btn btn-primary\" name=\"id\"value=\"{{patient.id}}\">Enregistrer</button>
                 {% endfor %}
             <form>
         </div>

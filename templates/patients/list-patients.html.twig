@@ -1,7 +1,7 @@
 {% extends "default.html.twig" %}
 
 {% block title %}
-    Liste patients
+    {{ title }}
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -12,7 +12,7 @@
             </div>
             <div class="p-3 mt-3 border-bottom">
                 <form action="?routing=rechercher-un-patient" class="form-inline my-2 my-lg-0" method="POST">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    <input class="form-control mr-sm-2" type="search" placeholder="{{ state }}" aria-label="Search"
                         name="nomPatient">
                     <button class="btn btn-outline-success my-2 my-sm-0" name="searchPatient"
                         type="submit">Search</button>
@@ -21,16 +21,10 @@
             <ul class="list-group p-3">
                 {% for patient in listpatients[1] %}
                     <li class="list-group-item d-flex flex-wrap justify-content-between bg--dark">
-                        <form action="index.php?routing=patient" method="POST">
-                             <button type="submit" class="btn btn-dark text-white" name="id" value="{{patient.id}}">{{patient.lastname}}</button>
-                        </form>
+                    <a href="index.php?routing=patient&amp;id={{patient.id}}" class="btn btn-dark text-white">{{patient.lastname}}</a>
                         <div class="d-flex align-items-center">
-                            <form action="index.php?routing=modifier-un-patient" method="POST">
-                                <button type="submit" class="btn btn-primary mr-3" name="id" value="{{patient.id}}">Modifier</button>
-                            </form>
-                            <form action="index.php?routing=supprimer-un-patient" method="POST">
-                                <button type="submit" class="btn btn-outline-danger" name="delPatientById" value="{{patient.id}}"><img style="filter:invert(100%);" src="img/trash.png"</button>
-                            </form>
+                        <a href="index.php?routing=modifier-un-patient&amp;id={{patient.id}}" class="btn btn-primary mr-3">Modifier</a>
+                            <a href="index.php?routing=supprimer-un-patient&amp;delPatientById={{patient.id}}" class="btn btn-outline-danger"><img style="filter:invert(100%);" src="img/trash.png"></a>
                         </div>
                     </li>
                 {% endfor %}
@@ -43,9 +37,7 @@
                 <ul class="pagination">
                     {% for i in 1..listpatients[0] %}
                         <li class="page-item">
-                            <form action="index.php?routing=liste-des-patients" method="POST">
-                                <button type="submit" class="page-link bg-dark text-white" name="pageIndex" value="{{ i }}">{{ i }}</button>
-                            </form>
+                            <a href="index.php?routing=liste-des-patients&amp;pageIndex={{ i }}" class="page-link bg-dark text-white">{{ i }}</a>
                         </li>
                     {% endfor %}
                 </ul>

@@ -10,6 +10,7 @@ $twig = new \Twig\Environment($loader, [
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 // MODELE
+require_once ("services/ExceptionWithRedirect.php");
 require_once ("services/sqlCommand.php");  
 // CONTROLLER
 require_once ("controller/AppController.php");
@@ -38,7 +39,8 @@ if(isset($_GET['routing'])){
    $page =  $_GET['routing'];
 }
 // ROUTING
-try{
+try
+{
     switch ($page) 
     {
         // Rendu de la page d'accueil
@@ -64,40 +66,55 @@ try{
 
         // Rendu de la page liste des patients
         case 'liste-des-patients':
-            $id = isset($_POST['pageIndex']) ? $_POST['pageIndex'] : '1';
+            $id = isset($_GET['pageIndex']) ? $_GET['pageIndex'] : '1';
             $patientController->showListPatient($id);
         break;
 
         // Rendu de la page profil d'un patient
         case 'patient':
-            if(isset($_POST['id'])){
-                $patientController->render_profilPatient($_POST['id']);
+            if(isset($_GET['id'])){
+                $patientController->render_profilPatient($_GET['id']);
             } 
             else
             {
-                throw new Exception("Cette page n'exite pas");
+                throw new ExceptionWithRedirect("Cette page n'existe pas !", 400, "liste-des-patients");
             }
         break;
 
         // Rechercher un patient
         case 'rechercher-un-patient':
-            $patientController->searchPatient($_POST['nomPatient']);
+            if (isset($_POST['nomPatient']) && !empty($_POST['nomPatient']))
+            {
+                 $patientController->searchPatient($_POST['nomPatient']);
+            }
+            else
+            {
+                throw new ExceptionWithRedirect("Veuillez saisir au moins un caractères  !", 400, "liste-des-patients");
+            }
+           
         break;
 
         // Supprimer un patient
         case 'supprimer-un-patient':
-            $patientController->deletePatient($_POST['delPatientById']);
+            if(isset($_GET['delPatientById']))
+            {
+                $patientController->deletePatient($_GET['delPatientById']);
+            } else
+            {
+                throw new ExceptionWithRedirect("Impossible de supprimer le profil du patient !", 400, "liste-des-patients");
+            }
+            
         break;
 
         // Rendu de la page MAJ
         case 'modifier-un-patient':
-            if(isset($_POST['id']))
+            if(isset($_GET['id']))
             {
-                $patientController->render_modifPatient($_POST['id']);
+                $patientController->render_modifPatient($_GET['id']);
             } 
             else
             {
-                throw new Exception("Cette page n'exite pas !");
+                throw new ExceptionWithRedirect("Cette page n'existe pas !", 400, "liste-des-patients");
             }
         break;
 
@@ -118,7 +135,7 @@ try{
             } 
             else
             {
-                throw new Exception("Vérifier que les champs obligatoire soit remplis !");
+                throw new ExceptionWithRedirect("Vérifier que les champs obligatoire soit remplis !", 400, "ajouter-patient-avec-rdv");
             }
         break;
 
@@ -135,30 +152,30 @@ try{
             } 
             else
             {
-                throw new Exception("Impossible de modifier ce rendez-vous !");
+                throw new ExceptionWithRedirect("Impossible de modifier ce rendez-vous !", 400, "ajouter-patient-avec-rdv");
             }
         break;
 
         // Rendu de la page modifier un RDV
         case 'modifier-un-rdv':
-            if(isset($_POST['idRdv']))
+            if(isset($_GET['idRdv']))
             {
-                $rdvController->showUpdateRdv($_POST['idRdv']);
+                $rdvController->showUpdateRdv($_GET['idRdv']);
             }
             else
             {
-                throw new Exception("Cette page n'exite pas !");
+                throw new ExceptionWithRedirect("Cette page n'exite pas !", 400, "liste-des-patients");
             }
         break;
 
         // Supprimer un RDV
         case 'delRdv':
-            if(isset($_POST['idDeleteRdv'])){
-                $rdvController->deleteRdv($_POST['idDeleteRdv']);  
+            if(isset($_GET['idDeleteRdv'])){
+                $rdvController->deleteRdv($_GET['idDeleteRdv']);  
             }
             else
             {
-                throw new Exception("Impossible de supprimer ce rendez-vous !");
+                throw new ExceptionWithRedirect("Impossible de supprimer ce rendez-vous !", 400, "liste-des-rdv");
             }
         break;
 
@@ -175,16 +192,16 @@ try{
             }
             else
             {
-                throw new Exception("Vérifier que les champs obligatoire soit remplis !");
+                throw new ExceptionWithRedirect("Impossible de modifier ce rendez-vous !", 400, "ajouter-patient-avec-rdv");
             }
         break;
 
         // Si aucune page trouvée alors erreur 404
         default:
-        $appController->erreur404("Cette adresse n'existe pas !");
+            throw new Exception("Cette adresse n'existe pas !", 404);
     }
 }
 catch(Exception $e)
 {
-    $appController->erreur404($e->getMessage());
+    $appController->handleError($e);
 }

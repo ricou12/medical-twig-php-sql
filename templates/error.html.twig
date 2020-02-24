@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% include 'includes/head.html.twig'%}
+    <title>error</title>
+</head>
+
+<body>
+    <main>
+        <div class="erreur "></div>
+        <div class="container-fluid text-white">
+            <div class="row rounded p-5 mt-1">
+                <div class="col-12 text-center">
+                    <h1 class="text-info">Erreur serveur</h1>
+                    <h3 class="mt-4">{{ error.getMessage() }}</h3>
+                </div>
+                <div class="col-12 text-center mt-4 ">
+                    {# TODO: Should be GET links #}
+                    {% if with_redirect %}
+                        <form action="index.php?routing={{ error.getRedirectUrl() }}" method="POST">
+                            <button type="submit" class="btn btn-outline-light"><h3>Retour</h3></button>
+                        </form>
+                    {% endif %}
+                    <form action="index.php?routing=home" method="POST">
+                        <button type="submit" class="btn btn-outline-light"><h3>Retour en page d'accueil</h3></button>
+                    </form>
+                 
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'includes/script.html.twig' %}
+</body>
+
+</html>
+
+
+
+
+
+{# {% extends "default.html.twig" %}
+
+{% block title %}
+    Error
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+       <div class="row">
+            <div class="error"></div>
+            <div class="col-12 d-flex justify-content-center">
+            </div>
+            <div class="col-12">
+               <p>{{ message }}</p>
+            </div>
+       </div> 
+    </div>
+{% endblock %} #}

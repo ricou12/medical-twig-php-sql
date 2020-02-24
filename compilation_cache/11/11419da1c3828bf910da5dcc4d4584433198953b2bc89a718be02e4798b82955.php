@@ -161,6 +161,6 @@ class __TwigTemplate_cb56375e4e9772bec0a17076708e96195a678cb33e6aed1935f4b7d04f1
         </div>
     </div>
 </div>
-{% endblock %}", "patients/ajouter-patient.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\patients\\ajouter-patient.html.twig");
+{% endblock %}", "patients/ajouter-patient.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\patients\\ajouter-patient.html.twig");
     }
 }

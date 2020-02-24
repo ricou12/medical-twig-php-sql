@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__.'/AppController.php');
+require_once(__DIR__.'/BaseController.php');
 
-class RdvController extends AppController {
+class RdvController extends BaseController {
     // Rendu de la page liste RDV
     function showListRdv()
     {

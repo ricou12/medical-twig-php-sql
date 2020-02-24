@@ -1,8 +1,8 @@
 <?php
-require_once(__DIR__.'/AppController.php');
+require_once(__DIR__.'/BaseController.php');
 
 
-class CommonController extends AppController {
+class CommonController extends BaseController {
 // Rendu de la page ajouter patient avec RDV
     function render_addPTAndRdv()
     {

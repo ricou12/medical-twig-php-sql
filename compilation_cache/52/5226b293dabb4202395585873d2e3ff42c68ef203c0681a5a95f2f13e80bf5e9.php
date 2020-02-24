@@ -59,8 +59,8 @@ class __TwigTemplate_7165f9b7e2f604ca6771f33adc1cad4a4298b7b67f03fb95d0eed0964eb
         // line 7
         echo "<div class=\"container\">
         <div class=\"row d-flex justify-content-center\">
-            <div class=\"col-6 mt-2 border p-2 rounded\">
-                <div class=\"p-3 bg-secondary border text-white\">
+            <div class=\"col-6 mt-2 border p-2 rounded bg--dark text-white\">
+                <div class=\"p-3 border\">
                     <h1>Modifier ce rendez-vous</h1>
                 </div>
                 <ul class=\"list-group\">
@@ -127,7 +127,7 @@ class __TwigTemplate_7165f9b7e2f604ca6771f33adc1cad4a4298b7b67f03fb95d0eed0964eb
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "mail", [], "any", false, false, false, 49), "html", null, true);
             echo "\" name=\"mail\" disabled required>
                             </div>
-                            <button type=\"submit\" class=\"btn btn-primary\" name=\"formIdRdv\"
+                            <button type=\"submit\" class=\"btn btn-primary\" name=\"IdRdv\"
                                 value=\"";
             // line 52
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 52), "html", null, true);
@@ -172,8 +172,8 @@ class __TwigTemplate_7165f9b7e2f604ca6771f33adc1cad4a4298b7b67f03fb95d0eed0964eb
 {% block content %}
 <div class=\"container\">
         <div class=\"row d-flex justify-content-center\">
-            <div class=\"col-6 mt-2 border p-2 rounded\">
-                <div class=\"p-3 bg-secondary border text-white\">
+            <div class=\"col-6 mt-2 border p-2 rounded bg--dark text-white\">
+                <div class=\"p-3 border\">
                     <h1>Modifier ce rendez-vous</h1>
                 </div>
                 <ul class=\"list-group\">
@@ -214,7 +214,7 @@ class __TwigTemplate_7165f9b7e2f604ca6771f33adc1cad4a4298b7b67f03fb95d0eed0964eb
                                 <input type=\"email\" class=\"form-control\" id=\"exampleInputPassword1\"
                                     value=\"{{rdv.mail}}\" name=\"mail\" disabled required>
                             </div>
-                            <button type=\"submit\" class=\"btn btn-primary\" name=\"formIdRdv\"
+                            <button type=\"submit\" class=\"btn btn-primary\" name=\"IdRdv\"
                                 value=\"{{rdv.idrdv}}\">Enregistrer</button>
                         {% endfor %}
                     <form>

@@ -81,6 +81,6 @@ class __TwigTemplate_9409fd84f36072b1c0163bc3a9585101669635bd45d71a44376ea795e7e
             <a class=\"nav-item nav-link\" href=\"?routing=ajouter-un-rdv\">Prise de rendez-vous</a>
         </div>
     </div>
-</nav>", "includes/navbar.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\includes\\navbar.html.twig");
+</nav>", "includes/navbar.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\includes\\navbar.html.twig");
     }
 }

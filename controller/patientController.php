@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__.'/AppController.php');
+require_once(__DIR__.'/BaseController.php');
 
-class PatientController extends AppController {
+class PatientController extends BaseController {
     // Rendu de la page ajouter un patient
     function render_newPatient()
     {
@@ -22,6 +22,7 @@ class PatientController extends AppController {
         $listpatients = $this->sqlCommande->listPatients($id);
         echo $this->render('patients/list-patients.html.twig', 
         ['title' => 'Liste des patients',
+        'state' => 'Search',
         'listpatients' => $listpatients
         ]);   
     }
@@ -44,10 +45,12 @@ class PatientController extends AppController {
     function searchPatient($name)
     {
         $listpatients = $this->sqlCommande->searchPatient($name);
+        $message = count($listpatients[1]) != 0 ? "search" : "Aucun résultat trouvé !";
         echo $this->render('patients/list-patients.html.twig', 
-            ['title' => 'Liste des patients',
-            'listpatients' => $listpatients
-            ]);
+        ['title' => 'Liste des patients',
+        'state' => $message,
+        'listpatients' => $listpatients
+        ]);        
     }
 
     // supprimer un patient

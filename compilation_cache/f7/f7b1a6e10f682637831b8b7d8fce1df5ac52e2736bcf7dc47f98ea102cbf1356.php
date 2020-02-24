@@ -79,43 +79,43 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
             // line 22
             echo "            <tr>
                 <th scope=\"row\">
-                    <form action=\"index.php?routing=delRdv\" method=\"POST\">
-                        <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"idDeleteRdv\" value=\"";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 25), "html", null, true);
-            echo "\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
-                            alt=\"Corbeille\"></button>
-                    </form>
-                </th>
+                    <a href=\"index.php?routing=delRdv&amp;idDeleteRdv=";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 24), "html", null, true);
+            echo "\"  class=\"btn btn-outline-danger\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
+                            alt=\"Corbeille\"></a>
+                    ";
+            // line 30
+            echo "                </th>
                 <th>
-                    <form action=\"index.php?routing=modifier-un-rdv\" method=\"POST\">
-                        <button type=\"submit\" class=\"btn btn-outline-success mr-3\" name=\"idRdv\" value=\"";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 31), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "dateHour", [], "any", false, false, false, 31), "html", null, true);
-            echo "</button>
-                    </form>
-                </th>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "lastname", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "firstname", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-                <td>";
+                    <a href=\"index.php?routing=modifier-un-rdv&amp;idRdv=";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "idrdv", [], "any", false, false, false, 32), "html", null, true);
+            echo "\" class=\"btn btn-outline-success mr-3\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "dateHour", [], "any", false, false, false, 32), "html", null, true);
+            echo "</a>
+                    ";
             // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "birthdate", [], "any", false, false, false, 36), "html", null, true);
-            echo "</td>
+            echo "                </th>
                 <td>";
             // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "phone", [], "any", false, false, false, 37), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "lastname", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
                 <td>";
             // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "mail", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "firstname", [], "any", false, false, false, 38), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "birthdate", [], "any", false, false, false, 39), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "phone", [], "any", false, false, false, 40), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rdv"], "mail", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
             </tr>
             ";
@@ -123,7 +123,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rdv'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 44
         echo "        </tbody>
     </table>
 </div>
@@ -142,7 +142,7 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
 
     public function getDebugInfo()
     {
-        return array (  127 => 41,  118 => 38,  114 => 37,  110 => 36,  106 => 35,  102 => 34,  94 => 31,  85 => 25,  80 => 22,  76 => 21,  60 => 7,  56 => 6,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  127 => 44,  118 => 41,  114 => 40,  110 => 39,  106 => 38,  102 => 37,  99 => 36,  93 => 32,  89 => 30,  84 => 24,  80 => 22,  76 => 21,  60 => 7,  56 => 6,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,15 +170,18 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
             {% for rdv in listrdv %}
             <tr>
                 <th scope=\"row\">
-                    <form action=\"index.php?routing=delRdv\" method=\"POST\">
+                    <a href=\"index.php?routing=delRdv&amp;idDeleteRdv={{ rdv.idrdv }}\"  class=\"btn btn-outline-danger\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
+                            alt=\"Corbeille\"></a>
+                    {# <form action=\"index.php?routing=delRdv\" method=\"POST\">
                         <button type=\"submit\" class=\"btn btn-outline-danger\" name=\"idDeleteRdv\" value=\"{{ rdv.idrdv }}\"><img style=\"filter:invert(100%);\" src=\"img/trash.png\"
                             alt=\"Corbeille\"></button>
-                    </form>
+                    </form> #}
                 </th>
                 <th>
-                    <form action=\"index.php?routing=modifier-un-rdv\" method=\"POST\">
+                    <a href=\"index.php?routing=modifier-un-rdv&amp;idRdv={{ rdv.idrdv }}\" class=\"btn btn-outline-success mr-3\">{{ rdv.dateHour }}</a>
+                    {# <form action=\"index.php?routing=modifier-un-rdv\" method=\"POST\">
                         <button type=\"submit\" class=\"btn btn-outline-success mr-3\" name=\"idRdv\" value=\"{{ rdv.idrdv }}\">{{ rdv.dateHour }}</button>
-                    </form>
+                    </form> #}
                 </th>
                 <td>{{ rdv.lastname }}</td>
                 <td>{{ rdv.firstname }}</td>
@@ -190,6 +193,6 @@ class __TwigTemplate_ffd62e0b519202dc410c030fc1236ac0f71a087e5686ad7f45212c41891
         </tbody>
     </table>
 </div>
-{% endblock %}", "rendez-vous/list-rendezvous.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\rendez-vous\\list-rendezvous.html.twig");
+{% endblock %}", "rendez-vous/list-rendezvous.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\rendez-vous\\list-rendezvous.html.twig");
     }
 }

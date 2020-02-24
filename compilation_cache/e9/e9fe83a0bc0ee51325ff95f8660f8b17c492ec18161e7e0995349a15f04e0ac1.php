@@ -115,6 +115,6 @@ class __TwigTemplate_06553b580a46fccd9fe6c041cc0eac88fc8668eb58fb30c60ceb96f0493
         </main>
         {% include 'includes/script.html.twig' %}
     </body>
-</html>", "default.html.twig", "C:\\wamp64\\www\\medical-twig-php-sql\\templates\\default.html.twig");
+</html>", "default.html.twig", "C:\\wamp64New\\www\\medical-twig-php-sql\\templates\\default.html.twig");
     }
 }
